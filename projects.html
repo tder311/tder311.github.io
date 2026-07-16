@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Tom Derrick</title>
+  <meta name="description" content="Tom Derrick's personal projects — NemDash real-time market analytics and an AI coding-agent orchestrator.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='70' fill='%233fb950'>&gt;_</text></svg>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — Tom Derrick">
+  <meta property="og:description" content="Tom Derrick's personal projects — NemDash real-time market analytics and an AI coding-agent orchestrator.">
+  <meta property="og:image" content="https://tder311.github.io/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+  <span class="brand">tom.derrick</span>
+  <nav aria-label="Pages">
+    <a href="index.html">home</a>
+    <a href="experience.html">experience</a>
+    <a href="projects.html" class="active" aria-current="page">projects</a>
+    <a href="ask.html">ask</a>
+    <a href="#contact">contact</a>
+    <a class="btn-cv" href="assets/cv.pdf" download>↓ CV</a>
+  </nav>
+</header>
+<main id="main">
+  <section id="projects" class="wrap" aria-label="Projects">
+    <p class="shell-line"><span class="ps-user">$</span> ls ~/projects</p>
+
+    <article class="card">
+      <div class="role-head">
+        <h2>NemDash <span class="chip green tag">public</span></h2>
+        <span class="muted"><a href="https://github.com/tder311/NemDash" target="_blank" rel="noopener">github.com/tder311/NemDash →</a></span>
+      </div>
+      <p class="proj-desc">Real-time electricity-market analytics platform: 5-minute AEMO ingestion pipeline, XGBoost price forecaster (7-day, half-hourly), LP battery dispatch optimiser, bid-band generation, and a tool-calling LLM chat agent.</p>
+      <p class="muted proj-tech">FastAPI · PostgreSQL · React · XGBoost · 52 merged PRs</p>
+      <div class="shot-grid">
+        <figure class="browser-frame">
+          <figcaption class="browser-bar"><span class="dots" aria-hidden="true">●●●</span> price forecast — model vs AEMO pre-dispatch, P10–P90</figcaption>
+          <a href="assets/nemdash-forecast.png" target="_blank" rel="noopener"><img src="assets/nemdash-forecast.png" alt="NemDash price forecast page: 7-day NSW1 price forecast with P10–P90 uncertainty band overlaid on AEMO pre-dispatch, spike markers highlighted" loading="lazy" width="1440" height="900"></a>
+        </figure>
+        <figure class="browser-frame">
+          <figcaption class="browser-bar"><span class="dots" aria-hidden="true">●●●</span> live dashboard — regional prices &amp; demand</figcaption>
+          <a href="assets/nemdash-dashboard.png" target="_blank" rel="noopener"><img src="assets/nemdash-dashboard.png" alt="NemDash live dashboard: real-time NEM regional prices and demand beside a map of Australia" loading="lazy" width="1440" height="900"></a>
+        </figure>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="role-head">
+        <h2>orchestrator</h2>
+        <span class="muted">private</span>
+      </div>
+      <p class="proj-desc">Coordinates multiple AI coding agents working in parallel across codebases — each task gets an isolated git worktree and its own agent session; a persistent message queue reports completion, blockers, and questions back to a central command session.</p>
+      <p class="muted proj-tech">Python · git worktrees · agent tooling</p>
+      <div class="term" role="img" aria-label="Example orchestrator terminal session: creating two agent workspaces, draining the message queue, and viewing the workspace dashboard">
+        <div class="term-bar"><span class="dots" aria-hidden="true">●●●</span> orchestrator — example session</div>
+        <pre class="term-body"><code><span class="t-prompt">$</span> new-workspace.sh --repo monodo --region sydney --branch feat/tb-spreads
+<span class="t-ok">✓</span> worktree ~/worktrees/monodo/sydney · agent launched
+
+<span class="t-prompt">$</span> new-workspace.sh --repo NemDash --region osaka --branch fix/pasa-staleness
+<span class="t-ok">✓</span> worktree ~/worktrees/NemDash/osaka · agent launched
+
+<span class="t-prompt">$</span> /watch
+<span class="t-dim">draining .queue/ — 2 messages</span>
+  [sydney] <span class="t-ok">DONE</span>    TB spread metrics added · tests green · draft PR opened
+  [osaka]  <span class="t-warn">BLOCKED</span> needs DATABASE_URL for the test fixture
+
+<span class="t-prompt">$</span> dashboard.sh
+  monodo/sydney   <span class="t-ok">idle</span>     feat/tb-spreads      +412 −88
+  NemDash/osaka   <span class="t-warn">waiting</span>  fix/pasa-staleness   needs input</code></pre>
+      </div>
+    </article>
+  </section>
+</main>
+<footer id="contact" class="site-footer">
+  <div class="wrap footer-row">
+    <p class="muted">
+      <a href="mailto:tderrick98@outlook.com">tderrick98@outlook.com</a> ·
+      <a href="https://github.com/tder311" target="_blank" rel="noopener">github.com/tder311</a> ·
+      <a href="https://www.linkedin.com/in/tderrick98/" target="_blank" rel="noopener">linkedin/tderrick98</a>
+    </p>
+    <a class="btn-cv" href="assets/cv.pdf" download>↓ Download CV (PDF)</a>
+  </div>
+</footer>
+</body>
+</html>
