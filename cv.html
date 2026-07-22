@@ -10,7 +10,7 @@
     h1 { font-size: 20pt; font-weight: 700; }
     .contact { font-size: 9.5pt; color: #444; margin-top: 2pt; }
     .contact a { color: #444; text-decoration: none; }
-    h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #999; margin: 12pt 0 6pt; padding-bottom: 2pt; }
+    h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #999; margin: 12pt 0 6pt; padding-bottom: 2pt; break-after: avoid-page; }
     .role { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8pt; }
     .role h3 { font-size: 10.5pt; }
     .dates { font-size: 9.5pt; color: #444; }
@@ -58,6 +58,7 @@
   <h2>Personal Projects</h2>
   <ul>
     <li><strong>NemDash</strong> (github.com/tder311/NemDash) — real-time electricity-market analytics platform: 5-minute AEMO ingestion pipeline, XGBoost price forecaster, LP battery dispatch optimiser, bid-band generation, tool-calling LLM chat agent. FastAPI · PostgreSQL · React.</li>
+    <li><strong>opencode-orchestrator</strong> (open-sourcing soon) — opencode plugin for parallel AI coding agents: each spawns into an isolated git worktree with its own interactive terminal session, pushing completion/blocker reports back to a supervising session.</li>
     <li><strong>orchestrator</strong> — coordinates multiple AI coding agents working in parallel across codebases: worktree isolation, task routing, session management.</li>
   </ul>
 

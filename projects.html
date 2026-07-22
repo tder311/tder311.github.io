@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Tom Derrick</title>
-  <meta name="description" content="Tom Derrick's personal projects — NemDash real-time market analytics and an AI coding-agent orchestrator.">
+  <meta name="description" content="Tom Derrick's personal projects — NemDash real-time market analytics, an opencode plugin for parallel coding agents, and an AI coding-agent orchestrator.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='70' fill='%233fb950'>&gt;_</text></svg>">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects — Tom Derrick">
-  <meta property="og:description" content="Tom Derrick's personal projects — NemDash real-time market analytics and an AI coding-agent orchestrator.">
+  <meta property="og:description" content="Tom Derrick's personal projects — NemDash real-time market analytics, an opencode plugin for parallel coding agents, and an AI coding-agent orchestrator.">
   <meta property="og:image" content="https://tder311.github.io/assets/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
@@ -47,6 +47,28 @@
           <figcaption class="browser-bar"><span class="dots" aria-hidden="true">●●●</span> live dashboard — regional prices &amp; demand</figcaption>
           <a href="assets/nemdash-dashboard.png" target="_blank" rel="noopener"><img src="assets/nemdash-dashboard.png" alt="NemDash live dashboard: real-time NEM regional prices and demand beside a map of Australia" loading="lazy" width="1440" height="900"></a>
         </figure>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="role-head">
+        <h2>opencode-orchestrator <span class="chip amber tag">open-sourcing soon</span></h2>
+        <span class="muted">in development</span>
+      </div>
+      <p class="proj-desc">Evolves the orchestrator (below) into a native opencode plugin: ask your session to spawn an agent and it gets its own git worktree and a background terminal tab running a full interactive coding session. Spawn several, keep working in your own tab, and supervise — agents push completion, blockers, and questions back via notifications and status reports injected into your main session.</p>
+      <p class="muted proj-tech">JavaScript · opencode plugin API · git worktrees · cmux · 73 tests</p>
+      <div class="term" role="img" aria-label="Example opencode-orchestrator session: spawning an agent into an isolated worktree and checking agent statuses">
+        <div class="term-bar"><span class="dots" aria-hidden="true">●●●</span> opencode-orchestrator — example session</div>
+        <pre class="term-body"><code><span class="t-prompt">&gt;</span> spawn an agent in monodo to add battery constraints to the NEM
+  <span class="t-ok">✓</span> git worktree add ~/worktrees/monodo/feat-nem-battery
+  <span class="t-ok">✓</span> background tab opened — your focus is untouched
+  <span class="t-ok">✓</span> opencode booted in the worktree, task delivered
+
+<span class="t-dim">agent: reportstatus → notification · tab marked unread</span>
+
+<span class="t-prompt">&gt;</span> /agents
+  monodo/feat-nem-battery   <span class="t-ok">DONE</span>     tests green · ready for review
+  NemDash/fix-pasa          <span class="t-warn">QUESTION</span> needs DATABASE_URL for fixture</code></pre>
       </div>
     </article>
 
