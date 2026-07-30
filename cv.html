@@ -57,8 +57,11 @@
 
   <h2>Personal Projects</h2>
   <ul>
-    <li><strong>NemDash</strong> (github.com/tder311/NemDash) — real-time electricity-market analytics platform: 5-minute AEMO ingestion pipeline, XGBoost price forecaster, LP battery dispatch optimiser, bid-band generation, tool-calling LLM chat agent. FastAPI · PostgreSQL · React.</li>
+    <li><strong>nem-market-watch</strong> (nemdash.up.railway.app) — live dashboard for Australia's National Electricity Market: five-minute prices and demand, market metrics, PASA reserve outlook, bid-band analysis, and a tool-calling LLM agent that answers questions against live data. React · FastAPI · PostgreSQL · Railway.</li>
+    <li><strong>nem-forward</strong> (forward-frontend-production.up.railway.app) — XGBoost price forecaster (7-day, half-hourly, P10–P90) benchmarked against AEMO pre-dispatch, LP battery dispatch optimiser, and bid-band generation; every forecast persisted for later scoring against actuals. XGBoost · FastAPI · React.</li>
+    <li><strong>nem-ingestion</strong> — five-minute AEMO market data pipeline: six NEMWEB clients, sole writer and schema owner across 13 tables, backfill CLIs, hourly rollups, and a retention sweep that cut the database from 21 GB to 2 GB. Python · PostgreSQL · Railway.</li>
     <li><strong>opencode-orchestrator</strong> (github.com/tder311/opencode-orchestrator · npm) — opencode plugin for parallel AI coding agents: each spawns into an isolated git worktree with its own interactive terminal session, pushing completion/blocker reports back to a supervising session.</li>
+    <li><strong>railway-tui</strong> (github.com/tder311/railway-tui) — terminal dashboard for Railway in Go and Bubble Tea: single static binary, OAuth (PKCE) login, live view of deployments, log streams, and environment variables over Railway's GraphQL API, with restart/redeploy/rollback actions and rate-limit-aware polling.</li>
     <li><strong>orchestrator</strong> — coordinates multiple AI coding agents working in parallel across codebases: worktree isolation, task routing, session management.</li>
   </ul>
 

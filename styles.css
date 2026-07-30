@@ -127,6 +127,7 @@ main { padding-bottom: 96px; min-height: calc(100vh - 220px); }
 
 /* project evidence: framed screenshots + terminal transcript */
 .shot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+.shot-grid.one { grid-template-columns: 1fr; }
 .browser-frame { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg); }
 .browser-bar {
   display: flex; align-items: center; gap: 10px; padding: 8px 12px;
@@ -148,6 +149,7 @@ main { padding-bottom: 96px; min-height: calc(100vh - 220px); }
 .t-prompt { color: var(--green); }
 .t-ok { color: var(--green); }
 .t-warn { color: var(--amber); }
+.t-err { color: var(--pink); }
 .t-dim { color: var(--muted); }
 
 /* ask widget */
