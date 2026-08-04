@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Tom Derrick</title>
-  <meta name="description" content="Tom Derrick's personal projects — a live NEM market dashboard, a price forecaster and battery dispatch optimiser, a five-minute market data pipeline, an opencode plugin for parallel coding agents, and a Railway deployment TUI.">
+  <meta name="description" content="Tom Derrick's personal projects — a live NEM market dashboard, a price forecaster and battery dispatch optimiser, a five-minute market data pipeline, a terminal UI for supervising AI coding agents, an opencode plugin for parallel coding agents, and a Railway deployment TUI.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='70' fill='%233fb950'>&gt;_</text></svg>">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects — Tom Derrick">
-  <meta property="og:description" content="Tom Derrick's personal projects — a live NEM market dashboard, a price forecaster and battery dispatch optimiser, a five-minute market data pipeline, an opencode plugin for parallel coding agents, and a Railway deployment TUI.">
+  <meta property="og:description" content="Tom Derrick's personal projects — a live NEM market dashboard, a price forecaster and battery dispatch optimiser, a five-minute market data pipeline, a terminal UI for supervising AI coding agents, an opencode plugin for parallel coding agents, and a Railway deployment TUI.">
   <meta property="og:image" content="https://tder311.github.io/assets/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
@@ -82,6 +82,34 @@
 <span class="t-prompt">$</span> python -m scripts.backfill bids --start 2026-06-01
 <span class="t-dim">59 days · 3 already complete, skipped</span>
   <span class="t-ok">✓</span> 1 843 226 rows written</code></pre>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="role-head">
+        <h2>agent-tui <span class="chip green tag">public</span></h2>
+        <span class="muted"><a href="https://github.com/tder311/agent-tui" target="_blank" rel="noopener">github.com/tder311/agent-tui →</a></span>
+      </div>
+      <p class="proj-desc">A terminal control room for local AI coding agents: one tree of every project on the machine, with its git worktrees, branches, historical Claude Code and OpenCode sessions, the agents running right now, and open GitHub PRs. Sessions carry real titles instead of raw UUIDs, live agents get a busy/idle/blocked status dot, and <code>o</code> opens anything — resume a session, open a worktree in a new terminal tab, or jump to a PR in the browser.</p>
+      <p class="proj-desc">Discovery is app-agnostic: rather than hardcoding where each tool puts its worktrees, it sweeps the filesystem for the <code>.git</code> markers git itself uses, so anything git considers a worktree is found no matter which app created it — Claude Code, Conductor, OpenCode, or something unregistered. Clones of the same upstream are folded into one project by normalised origin URL. Scanning is read-only and runs off the UI thread; the only mutations are explicit worktree/branch deletes and prunes, each behind a y/n confirm.</p>
+      <p class="muted proj-tech">Go · Bubble Tea · Lip Gloss · ~4,900 lines · 57 tests · MIT · <code>go install</code></p>
+      <div class="term" role="img" aria-label="agent-tui running: a project tree showing worktrees with dirty state, live agents with status dots, and open pull requests, with a keybinding bar along the bottom">
+        <div class="term-bar"><span class="dots" aria-hidden="true">●●●</span> agent-tui — example session</div>
+        <pre class="term-body"><code><span class="t-dim"> agent-tui │ 3 projects · 8 worktrees · 2 live agents · 4 PRs</span>
+
+ <span class="t-prompt">▾</span> monodo                                  <span class="t-dim">modoenergy/monodo</span>
+     <span class="t-dim">Worktrees</span>
+       feat/nem-battery      <span class="t-dim">WT</span> <span class="t-warn">claude</span>      <span class="t-warn">dirty</span> <span class="t-dim">↑2</span>
+       fix/tb-spreads        <span class="t-dim">WT</span> <span class="t-warn">claude</span>      <span class="t-ok">clean</span>
+     <span class="t-dim">Agents (live)</span>
+       <span class="t-ok">●</span> add battery constraints to the NEM  <span class="t-dim">busy · bg</span>
+       <span class="t-dim">●</span> nodal deep-dive charts              <span class="t-dim">idle · fg</span>
+     <span class="t-dim">Pull requests</span>
+       <span class="t-ok">#3053</span> feat(nem): TB spreads as $/MWh    <span class="t-dim">+412 −88</span>
+ <span class="t-prompt">▸</span> nem-forward
+ <span class="t-prompt">▸</span> ev-arb                                  <span class="t-dim">local</span>
+
+<span class="t-dim"> [o] open  [d] delete worktree  [/] filter  [r] refresh  [?] help</span></code></pre>
       </div>
     </article>
 
